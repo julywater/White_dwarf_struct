@@ -30,18 +30,18 @@ class white_dwarf{
         ksi[i]=i*dksi;
       rho_array[0]=1.0;
       rho_array[1]=1.0;
-      for(i=2;i<N;i++){
+      for(i=2;i<rho_array.size();i++){
         rho_array[i]=(-pow(rho_array[i-1],n)-(rho_array[i-2]-2*rho_array[i-1])/dksi/dksi+rho_array[i-2]/ksi[i-1]/dksi)/(1.0/dksi/dksi+1.0/(dksi*ksi[i-1]));
         if(rho_array[i]<=0)
           rho_array[i]=0;
       }
-      for(i=0;i<N;i++){
-          rho_array[i]=pow(rho_array[i],n);
-          pres_array=pow(rho,Gamma);
+      for(i=0;i<rho_array.size();i++){
+          rho_array[i]=pow(rho_array.at(i),n);
+          pres_array[i]=pow(rho_array.at(i),Gamma);
       }  
       double mass_sum=0;
-      for(int i=0;i<N;i++){
-        mass_sum+=4*M_PI*r*r*rho_array[i]*dr*pow(length_cof,3);
+      for(int i=0;i<rho_array.size();i++){
+        mass_sum+=4*M_PI*r*r*rho_array.at(i)*dr*pow(length_cof,3);
       }
       dens_cof=Mass/mass_sum;
       pres_cof=;
