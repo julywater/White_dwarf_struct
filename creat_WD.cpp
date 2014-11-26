@@ -39,10 +39,12 @@ class white_dwarf{
           rho_array[i]=pow(rho_array[i],n);
           pres_array=pow(rho,Gamma);
       }  
+      double mass_sum=0;
       for(int i=0;i<N;i++){
-        double mass+=
+        mass_sum+=4*M_PI*r*r*rho_array[i]*dr*pow(length_cof,3);
       }
+      dens_cof=Mass/mass_sum;
       pres_cof=;
-      vel_cof=;
+      vel_cof=sqrt(pres_cof/dens_cof);
     }
 }
