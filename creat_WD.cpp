@@ -35,12 +35,12 @@ class white_dwarf{
         if(rho_array[i]<=0)
           rho_array[i]=0;
       }
-        for(i=0;i<N;i++)
+      for(i=0;i<N;i++){
           rho_array[i]=pow(rho_array[i],n);
-      pres_array=;
-      dr=;
-      density_array=;
+          pres_array=pow(rho,Gamma);
+      }  
+      
       pres_cof=;
       vel_cof=;
     }
-    }
+}
